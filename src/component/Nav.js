@@ -10,7 +10,7 @@ const Nav = () => {
   let Links = [
     { name: "Home", link: "/" },
     { name: "Purchase List", link: "/purchase-list" },
-    { name: "Order", link: "/order" }
+    { name: "Project", link: "/project" }
   ]
 
   let UserMenu = [

@@ -4,6 +4,7 @@ import Home from "./routes/Home";
 import Register from "./routes/Register";
 import Login from "./routes/Login";
 import PurchaseList from "./routes/PurchaseList";
+import Project from "./component/Project";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home operation={false} />} />
           <Route path="/purchase-list" element={<PurchaseList />} />
+          <Route path="/project" element={<Project />} />
           <Route path="/operation" element={<Home operation={true} />} />
 
           <Route path="/register" element={<Register />} />

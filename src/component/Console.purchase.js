@@ -42,7 +42,7 @@ const PurchaseConsole = ({ operation }) => {
         datetime = `${years}-${months}-${days} ${hours}:${(String(mins).length === 1) ? '0' + String(mins) : String(mins)}:${(String(seconds).length === 1) ? '0' + String(seconds) : String(seconds)}`
     }
 
-    let timeCode = `${String(years).slice(2, 5)}${(String(months+1).length === 1) ? '0' + String(months+1) : String(months+1)}`
+    let timeCode = `${String(years).slice(2, 5)}${(String(months + 1).length === 1) ? '0' + String(months + 1) : String(months + 1)}`
 
     const getLastCode = (code) => {
         let c = String(code)
@@ -53,7 +53,7 @@ const PurchaseConsole = ({ operation }) => {
     }
 
     const getRequireDate = (date) => {
-        return `${date.getFullYear()}/${date.getMonth()+1}/${date.getDate()}`
+        return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`
     }
 
     const [site, setSite] = useState("")
@@ -161,10 +161,10 @@ const PurchaseConsole = ({ operation }) => {
             id: Math.floor(Math.random() * 1000),
             i_no: iNo,
             i_des: iDes,
-            i_qty: (iQty===""?"0":iQty),
+            i_qty: (iQty === "" ? "0" : iQty),
             i_unit: iUnit,
             i_price: (iPrice === "") ? "0.00" : iPrice,
-            i_amount: iAmount===""?"0":iAmount,
+            i_amount: iAmount === "" ? "0" : iAmount,
             i_req: iRequired,
             i_sup: iSup,
             i_asset: iAsset,
@@ -331,7 +331,7 @@ const PurchaseConsole = ({ operation }) => {
                             (operation ?
                                 <div className="w-2/12 inline-flex items-center justify-start">
                                     <button onClick={() => approvePurchase()} type="button" className="py-2 px-3 mx-2 bg-green-600 hover:bg-green-700 focus:ring-purple-500 focus:ring-offset-purple-200 text-white transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
-                                        Approve
+                                        Check
                                     </button>
                                     <button onClick={() => rejectPurchase()} type="button" className="py-2 px-3  bg-red-600 hover:bg-red-700 focus:ring-purple-500 focus:ring-offset-purple-200 text-white transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
                                         Cancel
@@ -500,6 +500,12 @@ const PurchaseConsole = ({ operation }) => {
                     <div className="flex gap-4 mb-2 mt-8">
                         <div className=" relative w-full">
                             <input value={pNote} onChange={e => setPNote(e.target.value)} type="text" id="create-account-first-name" className="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" name="First name" placeholder="Note" />
+                        </div>
+                    </div>
+                    <div>
+                        <input type="file" name="file" />
+                        <div>
+                            <button>Submit</button>
                         </div>
                     </div>
                 </form>
